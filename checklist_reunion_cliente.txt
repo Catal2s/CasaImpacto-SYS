@@ -1,0 +1,83 @@
+=== CHECKLIST REUNIÓN — SISTEMA DE GESTIÓN ===
+Cliente: __________________  Fecha: __________________
+
+── PRODUCTOS ──
+[ ] 1. ¿Manejan datos del vehículo al vender? (patente, modelo, año)
+     → ___________________________________________
+[ ] 2. ¿Cómo identifican productos? (código propio / fabricante / nombre)
+     → ___________________________________________
+[ ] 3. ¿Distintos precios según marca (original vs alternativo)?
+     → ___________________________________________
+
+── PRECIOS Y DESCUENTOS ──
+[ ] 4. ¿Descuento fijo (%) o monto libre?
+     → ___________________________________________
+[ ] 5. ¿Precio único o mayorista/minorista?
+     → ___________________________________________
+[ ] 6. ¿Precios con IVA incluido o separado?
+     → ___________________________________________
+
+── PAGOS ──
+[ ] 7. ¿Pago mixto? (ej: $15k efectivo + $10k débito)
+     → ___________________________________________
+[ ] 8. ¿Métodos aceptados? (efectivo/débito/crédito/transferencia)
+     → ___________________________________________
+
+── INSTALADORES Y COMISIONES ──
+[ ] 9. ¿Cuántos instaladores?
+     → ___________________________________________
+[ ] 10. ¿Comisión varía por tipo de vidrio? ¿Montos?
+      → ___________________________________________
+[ ] 11. ¿Instalador lo asigna cajero o bodeguero?
+      → ___________________________________________
+[ ] 12. ¿Solo instaladores tienen comisión? ¿Vendedores también?
+      → ___________________________________________
+[ ] 13. ¿Pago de comisión: semanal / quincenal / mensual?
+      → ___________________________________________
+
+── DOCUMENTOS ──
+[ ] 14. ¿Impresora térmica o láser?
+      → ___________________________________________
+[ ] 15. ¿Qué datos en el comprobante de venta?
+      → ___________________________________________
+[ ] 16. ¿Qué datos en la hoja de inspección?
+      → ___________________________________________
+[ ] 17. ¿Usan diagrama del auto para marcar daños?
+      → ___________________________________________
+[ ] 18. ¿Manejan devoluciones/cambios?
+      → ___________________________________________
+
+── RESERVAS Y PEDIDOS ──
+[ ] 19. ¿Anticipo: mitad siempre o monto libre?
+      → ___________________________________________
+[ ] 20. ¿Comprobante de reserva para el cliente?
+      → ___________________________________________
+[ ] 21. ¿Pedido a proveedor: día fijo o bajo demanda?
+      → ___________________________________________
+[ ] 22. ¿Necesitan registrar proveedores en sistema?
+      → ___________________________________________
+
+── FABRICACIÓN PROPIA ──
+[ ] 23. ¿Cómo registrar fabricación propia? (costo?)
+      → ___________________________________________
+
+── GARANTÍA ──
+[ ] 24. ¿Plazo de garantía? (3 / 6 meses / 1 año)
+      → ___________________________________________
+[ ] 25. ¿Sistema debe trackear garantías y alertar?
+      → ___________________________________________
+
+── OPERACIÓN ──
+[ ] 26. ¿Cuántas personas usan sistema a la vez?
+      → ___________________________________________
+[ ] 27. ¿Editar venta después de hecha o solo anular?
+      → ___________________________________________
+[ ] 28. ¿Notificaciones de stock bajo?
+      → ___________________________________________
+[ ] 29. ¿Inventario físico periódico? ¿Cómo lo manejan?
+      → ___________________________________________
+
+── NOTAS / OBSERVACIONES ──
+______________________________________________________
+______________________________________________________
+______________________________________________________

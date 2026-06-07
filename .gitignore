@@ -1,0 +1,21 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Java project (future)
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# Node
+node_modules/

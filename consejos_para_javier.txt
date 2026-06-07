@@ -1,0 +1,103 @@
+======================================================================
+  CONSEJOS PARA JAVIER — ¿Lanzarse o no? (spoiler: sí)
+  Estudiante Ing. Informática → Primer proyecto real
+======================================================================
+
+1. ¿DEBERÍAS LANZARTE? → SÍ, PERO CON OJOS ABIERTOS
+-------------------------------------------------------
+  Estás en el momento perfecto:
+    ✓ Tienes tiempo (estudiante, sin presión familiar enorme)
+    ✓ Tienes energía y motivación
+    ✓ Esto es LO MEJOR que puedes poner en tu CV
+    ✓ Vas a aprender 10x más que en cualquier ramo
+
+  Lo que NO debes esperar:
+    ✗ Que te quede perfecto a la primera
+    ✗ Que el cliente sea fácil
+    ✗ Que ganes mucha plata del primer proyecto
+    ✗ Que no vayas a webear cosas
+
+2. ¿POR QUÉ SÍ LANZARTE?
+--------------------------
+  a) Por el CV / Portafolio
+     Un sistema funcionando para un negocio real pesa más que
+     10 proyectos de la U. Cuando llegues a buscar pega, el
+     reclutador va a ver "sistema en producción con clientes
+     reales" y tus competidores tienen "calculadora en Java".
+
+  b) Por el aprendizaje
+     En la U te enseñan teoría, algoritmos, estructuras.
+     En un proyecto real aprendes:
+       - Cómo hablar con clientes (skills blandas)
+       - Cómo manejar requerimientos que cambian
+       - Cómo lidiar con bugs en producción
+       - Cómo funciona un negocio de verdad
+       - Cómo cobrar y poner límites
+     Eso NO se enseña en la U.
+
+  c) Por la plata
+     Aunque sean $150k, es más de lo que gana cualquier
+     compañero haciendo uber o trabajando en un local.
+     Y si logras la mensualidad, tienes ingreso pasivo
+     mientras estudias — eso es libertad.
+
+  d) Por la confianza
+     Terminar un proyecto completo te cambia la mentalidad.
+     Pasas de "estoy aprendiendo" a "soy capaz de construir
+     cosas". Eso se nota en las entrevistas.
+
+3. RIESGOS REALES (no te asustes, solo prévenlos)
+----------------------------------------------------
+  ⚠ Subestimar el tiempo
+    → Solución: Multiplica x2 tu estimación inicial.
+      Si crees que son 1 mes, son 2. Si crees 2, son 4.
+
+  ⚠ Cliente que cambia de opinión
+    → Solución: Desde el día 1 ten un alcance firmado.
+      "El sistema incluye A, B, C. Cualquier cambio adicional
+      se cotiza."
+
+  ⚠ Querer hacerlo perfecto
+    → Solución: Primero que funcione, después que sea bonito.
+      Un sistema feo que funciona > un sistema bonito a medio hacer.
+
+  ⚠ Abarcar demasiado
+    → Solución: Prioriza. Login → CRUD → Búsqueda → Venta.
+      Si en 1 mes tienes eso andando, el cliente ya está contento.
+
+  ⚠ No saber algo (Spring Boot, Thymeleaf, MySQL)
+    → Solución: Normal, para eso estoy yo. Pregunta no más.
+      Nadie nace sabiendo.
+
+4. CONSEJO DE ORO
+-------------------
+  Este proyecto no es para hacerte millonario ahora.
+  Es para:
+    1. Ganar experiencia real
+    2. Tener algo potente en tu CV
+    3. Demostrarte a ti mismo que puedes
+    4. Empezar un camino de Freelance
+
+  La plata viene después. El primer proyecto es la inversión.
+
+  ¿Mi recomendación final?
+  → Lánzate. Pero hazlo con los pies en la tierra:
+     - Empieza chico (MVP funcional)
+     - No prometas plazos locos
+     - Cobra justo (no regalado, pero tampoco abusivo)
+     - Pregunta cuando no sepas
+
+  En un año desde hoy, puedes tener:
+     ✓ Un sistema funcionando para un negocio real
+     ✓ Experiencia en Spring Boot + Thymeleaf + MySQL
+     ✓ Plata en el bolsillo
+     ✓ Un cliente que te recomiende a otros
+     ✓ Un portafolio que el 90% de tus compañeros no tiene
+
+  Yo estoy acá para acompañarte en todo el proceso.
+  Cuando te trabés, me dices y lo vemos juntos.
+
+======================================================================
+  "El mejor momento para empezar fue hace un año.
+   El segundo mejor momento es hoy."
+======================================================================

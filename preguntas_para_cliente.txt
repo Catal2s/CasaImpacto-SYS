@@ -1,0 +1,62 @@
+=== PREGUNTAS PARA EL CLIENTE (dueño del negocio) ===
+== Sistema de Gestión — Venta de Cristales Automotrices ==
+
+=== VEHÍCULO Y PRODUCTOS ===
+1. ¿Manejan datos del vehículo al vender? (patente, marca, modelo, año)
+2. ¿Cómo identifican los productos hoy? (código interno, nombre, por vehículo?)
+3. ¿Tienen códigos propios para los productos o usan los del fabricante?
+4. ¿Hay distintos precios según la marca del vidrio (original, alternativo)?
+
+=== PRECIOS Y DESCUENTOS ===
+5. ¿Cómo se aplican los descuentos? (porcentaje fijo, monto libre, por cliente?)
+6. ¿Hay precios mayorista / minorista o es uno solo?
+7. ¿Los precios son con IVA incluido o se muestra separado?
+
+=== PAGOS ===
+8. ¿El pago puede ser mixto? (parte efectivo + parte débito/crédito)
+9. ¿Qué métodos de pago aceptan? (efectivo, débito, crédito, transferencia)
+
+=== INSTALADORES Y COMISIONES ===
+10. ¿Cuántos instaladores trabajan actualmente?
+11. ¿La comisión varía según el tipo de vidrio? (¿tienen montos definidos?)
+    Ej: parabrisas = $10.000, lateral = $7.500, luneta = $8.000
+12. ¿El instalador lo asigna el cajero al vender o el bodeguero al preparar?
+13. ¿La comisión se paga semanal, quincenal o mensual?
+14. ¿Solo los instaladores tienen comisión o también los vendedores/cajeros?
+
+=== DOCUMENTOS Y REPORTES ===
+15. ¿Tienen impresora de tickets / comprobantes? ¿Térmica o láser?
+16. ¿Qué información debe llevar el comprobante de venta?
+17. ¿Qué información debe llevar la hoja de inspección del vehículo?
+18. ¿Usan actualmente algún diagrama del auto para marcar daños?
+19. ¿Hacen devoluciones o cambios? ¿Cómo se manejan?
+
+=== RESERVAS Y PEDIDOS ===
+20. Cuando un producto no está en stock y el cliente lo reserva:
+    - ¿El anticipo es siempre la mitad o puede ser otro monto?
+    - ¿Se le da un comprobante de la reserva al cliente?
+21. ¿Los pedidos a proveedores se hacen un día fijo a la semana
+    o se pide en el momento cuando alguien reserva?
+22. ¿Necesitan registrar proveedores en el sistema?
+
+=== FABRICACIÓN PROPIA ===
+23. El jefe de taller fabrica vidrios pequeños él mismo —
+    ¿cómo se maneja eso? ¿se registra como entrada de stock
+    con un costo de fabricación?
+
+=== GARANTÍA ===
+24. ¿Qué plazo de garantía ofrecen en las instalaciones?
+    (3 meses, 6 meses, 1 año?)
+25. ¿Quieren que el sistema registre las garantías y avise
+    cuando estén por vencer?
+
+=== OPERACIÓN ===
+26. ¿Cuántas personas usarán el sistema al mismo tiempo?
+27. ¿Quieren poder editar una venta después de hecha o solo anularla?
+28. ¿El horario de atención influye en los reportes (turno mañana/tarde)?
+29. ¿Necesitan notificaciones de stock bajo?
+30. ¿Cada cierto tiempo hacen inventario físico? ¿cómo lo manejan?
+31. ¿Tienen impresora térmica o láser para los comprobantes?
+
+=== ANOTACIONES PERSONALES ===
+

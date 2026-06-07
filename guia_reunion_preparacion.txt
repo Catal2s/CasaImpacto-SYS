@@ -1,0 +1,126 @@
+======================================================================
+  GUÍA DE REUNIÓN — Cómo empezar la conversación con el cliente
+  Sistema de Gestión — Venta de Cristales Automotrices
+======================================================================
+
+1. ROMPER EL HIELO (2-3 min)
+-----------------------------
+El dueño del negocio no es técnico, así que háblale en su idioma:
+
+  "Hola [nombre], ¿cómo estás? Bueno, como te comenté, estuve
+   dándole vueltas al proyecto del sistema para reemplazar el
+   Excel. Quiero entender bien cómo funciona todo en el día a
+   día para que el sistema le calce perfecto a ustedes, no al
+   revés. Por eso agendé esta reunión — son como 30 preguntas
+   rápidas, no más de 20-30 minutos."
+
+  → Tranqui, la idea es sacarle info, no abrumarlo.
+
+2. CONTEXTO QUE YA SABES (para soltarlo natural)
+--------------------------------------------------
+El proyecto nace porque:
+  - Hoy usan una planilla Excel que actualizan a mano
+  - Vendedores/cajeros, bodega y jefe de taller la usan
+  - A veces se desactualiza o se pisan los datos
+  - Quieren algo en red: bodega y caja conectados en tiempo real
+
+Tú le propones:
+  - Un sistema web liviano: solo abren el navegador y listo
+  - Cada quien con su cuenta (cajero ve ventas, bodega ve stock)
+  - Stock sincronizado automáticamente al vender
+  - Se imprime comprobante y hoja para el instalador
+
+3. LO QUE NO DEBES PREGUNTAR (ya lo sabemos)
+----------------------------------------------
+  ✓ No preguntes si quieren sistema web → ya lo decidimos
+  ✓ No preguntes qué tecnología usar → Spring Boot + MySQL
+  ✓ No preguntes si quieren roles de usuario → ya están definidos
+  ✓ No preguntes si quieren control de stock → es el core del sistema
+
+  Esas son decisiones TÉCNICAS que tú tomas como desarrollador.
+  Al cliente solo pregúntale cómo trabaja ELLOS.
+
+4. CÓMO LLEVAR LA REUNIÓN (tips)
+----------------------------------
+  a) Lleva el checklist impreso o en la compu y ve marcando
+  b) Si se va por las ramas, anótalo en "Notas" y vuelve al checklist
+  c) No necesitas respuesta para todo hoy — lo que no sepa, queda
+     pendiente y lo retomas después
+  d) Si te dice "es que en el Excel hacíamos así...", préstale
+     atención → ahí hay requirements clave
+  e) Al final, resumí lo acordado en 3 puntos para que sienta
+     que avanzaron
+
+TIPS EXPRESS (para tener en la cabeza):
+──────────────────────────────────────────
+  f) Si el cliente habla mucho, NO lo cortes — deja que se
+     explaye, ahí aparecen los requirements que no preguntaste
+  g) Si el cliente es cortante ("no sé", "como tú digas"), dale
+     opciones cerradas: "¿prefiere A o B?" en vez de "¿qué prefiere?"
+  h) Lleva el celu grabando (con permiso) o anota rápido —
+     no confíes en tu memoria
+  i) Si menciona un problema que ya tiene solución en el sistema,
+     dímelo con entusiasmo: "justo eso lo resuelve el sistema"
+  j) No prometas fechas ni costos en la reunión — "lo reviso y
+     te confirmo" es tu frase mágica
+  k) Si te pregunta algo técnico que no sabes: "Buena pregunta,
+     déjame revisarlo y te respondo" — seguro, no inventes
+  l) Después de 3 preguntas seguidas, haz una pausa y pregunta
+     "¿cómo suena todo hasta ahora?" para que no se sienta
+     interrogado
+  m) Si hay silencio incómodo, no lo llenes — el cliente está
+     pensando, dale tiempo
+  n) Lleva un ejemplo concreto: "mire, si un cliente llega y
+     pide un parabrisas de Toyota Corolla, usted busca en el
+     sistema y en 2 segundos le aparece stock, precio, y si
+     hay que pedirlo" — eso lo emociona
+  o) Al terminar cada sección del checklist, haz un resumen
+     de 1 frase: "ok, entonces los métodos de pago son efectivo
+     y débito, perfecto" — así confirmas que entendiste bien
+  p) Si el cliente dice "esto es urgente", pregúntale qué es
+     lo que más le duele hoy — por dónde empezar
+
+5. FRASES ÚTILES PARA LA REUNIÓN
+----------------------------------
+  - "¿Y cómo hacen hoy cuando pasa eso?"
+  - "¿Y eso pasa seguido o es raro?"
+  - "¿Quién hace eso normalmente? ¿El cajero o el de bodega?"
+  - "¿Te gustaría que el sistema lo haga automático o prefieren
+     controlarlo manual?"
+  - "Eso lo puedo dejar para una segunda etapa si quieres"
+  - "¿Algo más que se me haya quedado o que quieras agregar?"
+
+6. POSIBLES RESPUESTAS DEL CLIENTE Y QUÉ SUGERIR
+--------------------------------------------------
+  "A veces el stock no cuadra"
+    → TIP: justo, el sistema descuenta automático al vender
+         y la bodega registra entradas, así siempre cuadra
+
+  "Los instaladores reclaman que no les pagan a tiempo"
+    → TIP: el sistema calcula comisión automática por venta
+         y el admin ve cuánto se le debe a cada uno
+
+  "A veces un cliente pide algo y no hay stock, se pierde la venta"
+    → TIP: podemos hacer reservas con anticipo, queda registrado
+         y cuando llega el producto se completa la venta
+
+  "Quiero saber cuánto vendí en el mes"
+    → TIP: el dashboard de admin muestra ventas del día/semana/mes
+         con gráficos, todo automático
+
+7. DESPUÉS DE LA REUNIÓN
+--------------------------
+  - Pasá las respuestas del checklist a digital
+  - Si quedaron dudas, mándaselas por WhatsApp al día siguiente
+  - Compartime las respuestas y ajustamos el modelo si hace falta
+  - Arrancamos con la base de datos y el login
+
+8. RECORDATORIO FINAL
+----------------------
+  El cliente no sabe lo que quiere hasta que se lo preguntas.
+  Tú eres el experto técnico — él es el experto del negocio.
+  La reunión no es para impresionar, es para entender.
+  Si no sabes algo, dímelo y lo vemos juntos.
+
+  ¡Éxito, Javier! Nos vemos después de la reunión.
+======================================================================

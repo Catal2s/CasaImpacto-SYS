@@ -1,0 +1,230 @@
+======================================================================
+  PROYECTO: SISTEMA DE GESTIÓN — VENTA DE CRISTALES AUTOMOTRICES
+  Contexto completo de planificación
+  Fecha: Junio 2026
+======================================================================
+
+1. DESCRIPCIÓN DEL NEGOCIO
+--------------------------
+Venta de parabrisas, lunetas (vidrios traseros) y vidrios laterales
+para automóviles. El local trabajaba con una planilla Excel que
+actualizaban a diario con descuentos y pedidos entrantes desde bodega.
+Los vendedores/cajeros usaban la misma planilla para buscar productos
+y vender al cliente. Canales de venta: presencial, WhatsApp, teléfono.
+
+2. OBJETIVO DEL PROYECTO
+--------------------------
+Reemplazar la planilla Excel por un sistema con base de datos,
+accesible desde múltiples equipos en red (bodega y caja),
+con stock sincronizado en tiempo real.
+
+3. STACK TECNOLÓGICO (DECIDIDO)
+----------------------------------
+- Backend:  Java 17+ / Spring Boot 3
+- Frontend: Thymeleaf + Bootstrap 5
+- BD:       MySQL (usuario ya maneja MySQL con Laragon)
+- Build:    Maven
+- Red:      Todos los equipos apuntan a la IP del servidor
+- IDE:      El usuario usa herramientas como SQL Developer,
+            Visual Studio Code, Git Bash
+
+4. ARQUITECTURA
+------------------
+Web App Local — servidor Spring Boot corriendo en una PC,
+acceso por navegador desde cualquier equipo de la red local
+mediante http://IP:8080
+
+5. ROLES DE USUARIO
+---------------------
+- ADMIN:  Reportes de ventas totales, gestión de usuarios,
+          CRUD de productos, acceso completo,
+          ver comisiones de instaladores
+- BODEGA: Ver stock, registrar entradas de inventario,
+          preparar pedidos, asignar instalador
+- CAJERO: Buscar productos, registrar ventas con descuento,
+          seleccionar canal de venta, cobrar,
+          seleccionar instalador al vender
+- INSTALADOR: Perfil solo de consulta (ver sus trabajos,
+               comisiones acumuladas) — opcional
+
+6. ENTIDADES / MODELO DE DATOS (propuesta inicial)
+----------------------------------------------------
+Usuario:
+  - id, username, password (encriptado), rol (ADMIN/BODEGA/CAJERO/INSTALADOR)
+
+Producto:
+  - id, codigo, nombre, tipo (PARABRISAS/LUNETA/LATERAL/OTRO),
+    vehiculo, precio, stock, comision_instalacion (monto por unidad)
+
+Cliente:
+  - id, nombre, rut, telefono, email
+
+Reserva:
+  - id, producto_id, cliente_id, fecha, estado (PENDIENTE/COMPLETADA/CANCELADA),
+    anticipo (monto pagado por adelantado), total_acordado,
+    usuario_id (quien registró)
+
+Venta:
+  - id, fecha, total, descuento, canal (PRESENCIAL/WHATSAPP/TELEFONO),
+    cliente_id, usuario_id (quien vendió/cobró),
+    instalador_id (quien instaló, opcional),
+    reserva_id (NULL si no viene de reserva),
+    estado (COMPLETADA/ANULADA/EN_GARANTIA)
+
+DetalleVenta:
+  - id, venta_id, producto_id, cantidad, precio_unitario
+
+Pago:
+  - id, venta_id, tipo (EFECTIVO/DEBITO/CREDITO), monto
+    (soporta pago mixto: ej. $15.000 efectivo + $10.000 débito)
+
+MovimientoStock:
+  - id, producto_id, tipo (ENTRADA/SALIDA), cantidad,
+    fecha, usuario_id, referencia (ej. "Venta #123")
+
+Instalador (opcional, puede ser usuario con rol INSTALADOR):
+  - id, nombre, telefono, activo
+
+Comision (registro de comisiones generadas):
+  - id, venta_id, instalador_id, monto, fecha_cobro (NULL si no pagada)
+
+7. FUNCIONALIDADES POR SPRINT
+-------------------------------
+v1.0 (MVP - esencial):
+  - Login con roles (ADMIN, BODEGA, CAJERO, INSTALADOR)
+  - CRUD de productos (con comision_instalacion por producto)
+  - Gestión de instaladores (registrar, activar/inactivar)
+  - Control de stock (entradas bodega, salida por venta)
+  - Fabricación propia (registrar entrada de vidrios fabricados internamente)
+  - Reserva de productos con anticipo (pago parcial o total, pedido a proveedor)
+  - Búsqueda rápida de productos (código, nombre, vehículo)
+  - Registro de ventas con:
+    * Descuento, canal de venta, método de pago
+    * Asignación de instalador
+    * Cálculo automático de comisión
+  - Impresión de 2 documentos:
+    a) Comprobante de venta (para el cliente)
+    b) Hoja de inspección/preparación (para el instalador)
+  - Dashboard básico para admin:
+    * Ventas del día/semana/mes
+    * Stock bajo
+    * Comisiones generadas y pagadas por instalador
+  - Historial de ventas por usuario e instalador
+
+v1.1 (mejora pagada / actualización):
+  - Facturación electrónica / generación de documentos legales
+  - Inspección de vehículo con diagrama visual de daños
+    (imagen del auto con círculos para marcar daños)
+  - Envío de comprobante por correo al cliente
+  - Módulo de clientes completo con historial
+  - Reportes avanzados (gráficos, exportar a Excel, PDF)
+  - Notificaciones de stock bajo (alerta visual)
+  - Módulo de proveedores
+
+8. FLUJO DE VENTA (cajero)
+----------------------------
+1. Cajero inicia sesión (rol CAJERO)
+2. Busca producto por código, nombre o vehículo
+3. Selecciona el producto y define cantidad
+4. Aplica descuento si corresponde
+5. Selecciona canal de venta (presencial/WSP/teléfono)
+6. Selecciona método(s) de pago y montos
+7. (Opcional) Ingresa datos del cliente (nombre, rut, teléfono)
+8. Asigna instalador (quién hará el cambio)
+9. Confirma venta → sistema descuenta stock automáticamente
+10. Se imprimen 2 documentos:
+    a) Comprobante de venta / producto vendido (para el cliente)
+    b) Hoja de inspección del vehículo (para el instalador,
+       con datos del vehículo y diagrama de daños)
+11. Se registra en DetalleVenta, MovimientoStock y Comision (instalador)
+
+9. DOCUMENTOS IMPRESOS
+-----------------------
+Al registrar una venta se generan 2 documentos:
+
+a) COMPROBANTE DE VENTA (para el cliente / cajero)
+   - N° de venta, fecha, vendedor
+   - Producto(s) comprados, cantidades, precios
+   - Descuento aplicado
+   - Total pagado y método(s) de pago
+   - Datos del cliente (si se registró)
+
+b) HOJA DE INSPECCIÓN / PREPARACIÓN (para el instalador)
+   - Producto a instalar
+   - Datos del vehículo (modelo, patente)
+   - Espacio para marcar daños preexistentes
+     (a futuro: diagrama visual del auto con círculos)
+   - Nombre del instalador asignado
+   - Fecha
+
+10. FLUJO DE RESERVA (producto sin stock)
+-------------------------------------------
+1. Cliente quiere un producto que no hay en stock
+2. Cajero registra una reserva con el producto y cliente
+3. Cliente paga un anticipo (mitad o total) → se registra
+4. Se hace pedido al proveedor (o fabricación propia)
+5. Cuando llega el producto, se completa la venta
+   → la reserva pasa a COMPLETADA
+   → el anticipo se descuenta del total
+   → se genera la venta normal con instalador
+
+11. DATOS ADICIONALES DEL NEGOCIO
+-----------------------------------
+- Los productos son mayormente alternativos (no originales)
+- El jefe de taller fabricaba vidrios pequeños él mismo
+  (fabricación propia como origen de stock)
+- Se ofrece garantía en instalaciones (plazo por confirmar)
+- Los proveedores son fijos, con pedidos programados
+  (día específico por confirmar con el cliente)
+
+12. INTERFAZ DE USUARIO (UI)
+-------------------------------
+Framework: Bootstrap 5 (botones grandes, colores claros, responsive)
+
+Principios:
+- Simple y funcional primero (MVP)
+- Botones grandes para uso rápido en caja
+- Búsqueda con autocompletado al escribir
+- Colores diferenciados por rol (opcional a futuro)
+- Se validará con el cliente en la marcha:
+  "¿Le gusta así o prefiere algo más intuitivo?"
+- El diseño se ajustará según feedback del negocio
+
+Pantallas planeadas (por orden de desarrollo):
+1. Login
+2. Menú principal por rol
+3. Buscador de productos (core)
+4. Registro de venta
+5. Entrada de stock (bodega)
+6. Dashboard admin (reportes básicos)
+
+13. METODOLOGÍA DE TRABAJO
+-------------------------------
+Este proyecto es colaborativo y de aprendizaje:
+- El desarrollador (Vicente) quiere aprender, no solo recibir código
+- El asistente (opencode) guía, explica y sugiere
+- No se avanza sin que Vicente entienda y decida
+- Flujo típico:
+  1. opencode explica qué toca hacer y por qué
+  2. Vicente opina, pregunta o da el visto bueno
+  3. opencode guía la implementación, explicando cada parte
+  4. Vicente participa activamente en las decisiones
+- Objetivo: que Vicente aprenda Spring Boot, Thymeleaf, MySQL
+  y cómo se construye un proyecto real desde cero
+
+14. CONSIDERACIONES PENDIENTES
+-------------------------------
+- Preguntar al cliente sobre datos del vehículo al vender
+  (ver preguntas_para_cliente.txt)
+- Confirmar manejo de devoluciones / cambios
+- Facturación se deja para v1.1 (actualización)
+- Pago mixto documentado para consultar al cliente
+- Confirmar si el instalador se asigna en caja o en bodega
+- Preguntar si usan impresora térmica o láser para los documentos
+- Confirmar días de pedido a proveedores
+- Confirmar plazo de garantía en instalaciones
+- Consultar si quieren tracking de garantías en el sistema
+
+15. PREGUNTAS PARA EL CLIENTE
+-------------------------------
+Ver archivo: preguntas_para_cliente.txt
